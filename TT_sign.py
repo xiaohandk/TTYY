@@ -5,7 +5,8 @@ import time
 from push import push
 _push=push()
 
-TTbody=os.environ['TTbody']
+a=os.environ['TTbody']
+TTbody=str(a)
 headers={
         'Host': 'node.52tt.com',
         'Content-Type': 'application/json',
