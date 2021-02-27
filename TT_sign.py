@@ -5,7 +5,7 @@ import time
 from push import push
 _push=push()
 
-data=os.environ["TTbody"]
+data={"uid" : "216626478","os_type" : "2","device_id" : "202102261725023ec96febbd4e70180e02f8bf0732201b018ef28d1198b963","platform" : "1","app" : "0","version" : "84213766","market_id" : "0","token" : "eyJhbGciOiAiSFM1MTIiLCAidHlwIjogIkpXUyJ9.eyJleHAiOiAxNjE0Mzk4NjM0LCAiaWF0IjogMTYxNDM5NzczNCwgImlzcyI6ICI1MnR0LmNvbSIsICJzZXNzIjogIiIsICJzdWIiOiAidHQyNzI5OTk2NDYiLCAidGVybSI6IDExNzk2NDgsICJ0eXAiOiAxLCAidWlkIjogMjE2NjI2NDc4fQ.ZLTJnSTNDpn7wDiG5LhoXyudLvuvXW3CGxyUi19vbmCvDr2xz9lLHngHObtp4xOwqAmrSjKZ_VyVPJs80VNvUA","ip" : "119.86.34.227","appid" : "0",}
 print(data)
 headers={
         'Host': 'node.52tt.com',
