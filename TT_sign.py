@@ -5,7 +5,13 @@ import time
 from push import push
 _push=push()
 
-TTbody=os.environ["TTbody"]
+uid=os.environ["uid"]
+token=os.environ["token"]
+data={
+        "uid" : uid,
+        "token" : token,
+    }
+TTbody=data
 headers={
         'Host': 'node.52tt.com',
         'Content-Type': 'application/json',
@@ -28,7 +34,16 @@ def output(content):
 def userinfo():
     url='https://node.52tt.com/activity-production/new-user-month-checkin/activity.Checkin/init'
     res = requests.post(url=url,headers=headers,json=TTbody)
-    output(res.text)
+    print(res.text)
+    code = json.loads(res.text)['code']
+    if code==0:
+        #用户名
+        nickname= json.loads(res.text)['data']['userInfo']['nickname']
+        #当前累计收益
+        curMoney= json.loads(res.text)['data']['curMoney']
+        #已打卡次数
+        taskIndex= json.loads(res.text)['data']['taskIndex']
+    output(f'[+]用户名：{nickname}\n[+]当前累计收益：{curMoney}\n[+]已打卡次数：{taskIndex}')
     
 def sign():
     nowtime=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
@@ -47,6 +62,7 @@ def main():
     #查询用户打卡信息
     userinfo()
     #打卡
+    sign()
     #信息推送
     #钉钉推送
     try:
