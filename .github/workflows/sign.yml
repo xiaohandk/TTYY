@@ -26,7 +26,7 @@ jobs:
         run: pip install -r ./requirements.txt 
         
       - name: '运行TT语音打卡脚本'  
-        run: python3 sign.py 
+        run: python3 TT_sign.py 
         env:
             TTbody: ${{ secrets.TTbody }}
             dingding: ${{ secrets.dingding }}
