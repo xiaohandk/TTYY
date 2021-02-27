@@ -5,8 +5,7 @@ import time
 from push import push
 _push=push()
 
-a=os.environ['TTbody']
-data=str(a)
+TTbody=os.environ['TTbody']
 headers={
         'Host': 'node.52tt.com',
         'Content-Type': 'application/json',
@@ -28,7 +27,7 @@ def output(content):
     print(content)
 def userinfo():
     url='https://node.52tt.com/activity-production/new-user-month-checkin/activity.Checkin/init'
-    res = requests.post(url=url,headers=headers,json=data)
+    res = requests.post(url=url,headers=headers,json=TTbody)
     code = json.loads(res.text)['code']
     if code==0:
         #用户名
@@ -42,7 +41,7 @@ def userinfo():
 def sign():
     nowtime=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
     url='https://node.52tt.com/activity-production/new-user-month-checkin/activity.Checkin/checkin'
-    res = requests.post(url=url,headers=headers,json=data)
+    res = requests.post(url=url,headers=headers,json=TTbody)
     code = json.loads(res.text)['code']
     msg = json.loads(res.text)['msg']
     if code==2:
