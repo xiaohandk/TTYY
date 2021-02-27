@@ -30,7 +30,8 @@ def output(content):
 def userinfo():
     url='https://node.52tt.com/activity-production/new-user-month-checkin/activity.Checkin/init'
     res = requests.post(url=url,headers=headers,json=TTbody)
-    code = json.loads(res.text)['code']
+    print(res.text)
+    #code = json.loads(res.text)['code']
     if code==0:
         #用户名
         nickname= json.loads(res.text)['data']['userInfo']['nickname']
