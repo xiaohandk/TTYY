@@ -5,8 +5,10 @@ import time
 from push import push
 _push=push()
 
-a={os.environ['TTbody']}
-TTbody=str(a)
+a=os.environ['TTbody']
+b=str(a).split('{')[1].split('}')[0]
+c='{'+b+'}'
+TTbody=str(c)
 headers={
         'Host': 'node.52tt.com',
         'Content-Type': 'application/json',
