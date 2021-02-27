@@ -25,8 +25,8 @@ jobs:
       - name: '安装 requirements'
         run: pip install -r ./requirements.txt 
         
-      - name: '运行爱奇艺签到脚本'  
-        run: python3 main.py 
+      - name: '运行TT语音打卡脚本'  
+        run: python3 sign.py 
         env:
             TTbody: ${{ secrets.TTbody }}
             dingding: ${{ secrets.dingding }}
