@@ -2,16 +2,15 @@ import requests
 import json
 import os
 
-
+dingding = os.environ["dingding"]
 
 class push():
     def dingtalk(self,contents):  #钉钉消息推送
-        dingding = os.environ["dingding"]
         dd_header = {"Content-Type": "application/json", "Charset": "UTF-8"}
         dd_message = {
             "msgtype": "text",
             "text": {
-                "content": f'bilibili每日任务信息通知！\n{contents}'
+                "content": f'TT语音每日打卡通知！\n{contents}'
             }
         }
         r = requests.post(url=dingding,
