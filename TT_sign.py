@@ -6,7 +6,7 @@ from push import push
 _push=push()
 
 a=os.environ['TTbody']
-TTbody=str(a)
+TTbody=str(a[0])
 headers={
         'Host': 'node.52tt.com',
         'Content-Type': 'application/json',
